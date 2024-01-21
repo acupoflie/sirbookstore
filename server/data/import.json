@@ -1,0 +1,105 @@
+[
+    {
+        "name": "Notes from Underground",
+        "author": "Fyodor Dostoevsky",
+        "publisher": "Simon & Schuster",
+        "publishDate": "1864-04-02",
+        "description": "Notes from Underground is a novella written by Russian author Fyodor Dostoevsky, first published in 1864. The work is considered one of the earliest existentialist novels and is often cited as a precursor to the development of modern psychological literature. The novella is presented in two parts: the first being a philosophical and introspective monologue by an unnamed, alienated narrator living in St. Petersburg, and the second featuring a more narrative-driven account of events from his past. The Underground Man, as the protagonist is often referred to, is a highly intellectual and self-aware individual who grapples with his own contradictions, bitterness, and a sense of societal alienation. He explores themes such as free will, consciousness, and the nature of human existence, offering a critical examination of both rationalism and utopian ideals. The novella is celebrated for its deep psychological insight, complex narrative structure, and its exploration of the darker aspects of human nature.",
+        "pageCount": 136,
+        "price": "$11.20",
+        "genres": [
+            "Philosophical fiction",
+            "Novel"
+        ],
+        "saleStatus": "On Sale",
+        "quantity": 505,
+        "language": "English"
+    },
+    {
+        "name": "Incubo",
+        "author": "Wulf Dorn",
+        "publisher": "Corbaccio",
+        "publishDate": "2016-05-26",
+        "description": "It appears there might be a confusion in your query. Incubo is not directly associated with Wulf Dorn or any specific work by him that I'm aware of up until my last knowledge update in January 2022. Wulf Dorn is a German author known for psychological thrillers and suspense novels. If Incubo is a specific work or concept related to Wulf Dorn that emerged after my last update, I recommend checking the latest sources for accurate information. Alternatively, if you meant a different title or work by Wulf Dorn, please provide more details, and I'll do my best to assist you.",
+        "pageCount": 351,
+        "price": "$26.32",
+        "genres": [
+            "Thriller",
+            "Mystery",
+            "Crime",
+            "Fiction"
+        ],
+        "saleStatus": "On Sale",
+        "quantity": 305,
+        "language": "German"
+    },
+    {
+        "name": "The Three Musketeers",
+        "author": "Alexandre Dumas",
+        "publisher": "Simon & Schuster",
+        "publishDate": "1844-07-02",
+        "description": "The Three Musketeers is a classic historical adventure novel written by Alexandre Dumas. First published in serialized form between 1844 and 1846, the novel is set in the 17th century and follows the adventures of a young man named d'Artagnan as he joins the musketeers of the French king—Athos, Porthos, and Aramis. D'Artagnan, a passionate and courageous young nobleman, travels to Paris with the dream of becoming a musketeer. The story unfolds with political intrigue, romance, and swashbuckling action as the four musketeers become embroiled in a complex plot involving the villainous Cardinal Richelieu and the beautiful but mysterious Milady de Winter. Known for its exciting duels, memorable characters, and themes of friendship and loyalty, The Three Musketeers has become one of the most beloved adventure novels in literature. The novel has been adapted into numerous films, TV series, and stage productions, further cementing its status as a timeless classic.",
+        "pageCount": 792,
+        "price": "$64.60",
+        "genres": [
+            "Novel",
+            "Adventure",
+            "Historical novel",
+            "Fiction"
+        ],
+        "saleStatus": "On Sale",
+        "quantity": 405,
+        "language": "French"
+    },
+    {
+        "name": "Anna Karenina",
+        "author": "Lev Tolstoy",
+        "publisher": "Penguin Classics",
+        "publishDate": "2004-05-01",
+        "description": "Anna Karenina is a classic novel written by Leo Tolstoy. Published in 1877, it tells the tragic story of Anna Karenina, a married aristocrat who enters into a tumultuous affair with the affluent Count Vronsky. The novel explores themes of love, morality, and societal expectations in 19th-century Russia. As Anna's personal life unravels, the narrative also delves into the lives of other characters, providing a panoramic view of Russian society. Tolstoy's intricate characterizations and deep insights into the human condition have solidified Anna Karenina as one of the greatest novels in world literature.",
+        "pageCount": 864,
+        "price": "$21.00",
+        "genres": [
+            "Novel",
+            "Fiction",
+            "Drama"
+        ],
+        "saleStatus": "On Sale",
+        "quantity": 400,
+        "language": "Russian"
+    },
+    {
+        "name": "The Royal Game",
+        "author": "Stefan Zweig",
+        "publisher": "Penguin Classic ",
+        "publishDate": "2017-08-22",
+        "description": "Stefan Zweig's The Royal Game, also known as Chess Story or Schachnovelle, is a novella that delves into the psychological effects of solitary confinement and the game of chess. Originally published in 1941, the story unfolds on a ship traveling from New York to Buenos Aires. Dr. B., a passenger on board, is a chess master who engages in a mental duel against the ship's mysterious passenger, Czentovic, the world chess champion. As Dr. B. recounts his experiences of being imprisoned and subjected to isolation by the Nazis, the novella explores themes of mental resilience, the power of the mind, and the consequences of extreme solitude. Zweig's The Royal Game is celebrated for its profound exploration of the human psyche under duress and the intellectual intricacies of chess.",
+        "pageCount": 211,
+        "price": "$17.17",
+        "genres": [
+            "Novel",
+            "Fiction"
+        ],
+        "saleStatus": "On Sale",
+        "quantity": 700,
+        "language": "German"
+    },
+    {
+        "name": "What Comes Next",
+        "author": "John Katzenbach",
+        "publisher": "Mysterious Press ",
+        "publishDate": "2013-07-11",
+        "description": "As of my last knowledge update in January 2022, I'm not aware of a specific work by John Katzenbach titled What Comes Next. It's possible that this could be a newer release or a title not covered in my training data.John Katzenbach is an American author known for his psychological thrillers and suspense novels. If What Comes Next is a book that emerged after my last update, I recommend checking the latest sources, such as the author's official website or recent book catalogs, for accurate and up-to-date information about the plot and themes of the novel.",
+        "pageCount": 464,
+        "price": "$12.46",
+        "genres": [
+            "Thriller",
+            "Mystery",
+            "Psychological thriller",
+            "Suspense"
+        ],
+        "saleStatus": "On Sale",
+        "quantity": 305,
+        "language": "German"
+    }
+]

@@ -1,0 +1,11 @@
+Query took 178 seconds to fetch all the documentsQuery took 419 milliseconds to fetch all the documentsQuery took 177 milliseconds to fetch all the documents
+Query took 2350 milliseconds to fetch all the documents 
+Query took 180 milliseconds to fetch all the documents 
+Query took 374 milliseconds to fetch all the documents 
+Query took 546 milliseconds to fetch all the documents 
+Query took 470 milliseconds to fetch all the documents 
+Query took 668 milliseconds to fetch all the documents 
+Query took 1914 milliseconds to fetch all the documents 
+Query took 2238 milliseconds to fetch all the documents 
+Query took 9083 milliseconds to fetch all the documents 
+Query took 1003 milliseconds to fetch all the documents 

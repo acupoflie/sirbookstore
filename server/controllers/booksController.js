@@ -2,9 +2,12 @@
 const Book = require('./../models/bookModel');
 const CustomError = require('./../utils/CustomError');
 const asyncErrorHandler = require('./../utils/asyncErrorHandler');
+const BookApiFeatures = require('../utils/BookApiFeatures');
 
 exports.getAllBooks = asyncErrorHandler(async (req, res, next) => {
         const books = await Book.find();
+
+        new BookApiFeatures(Book.find(), req.query).filter();
 
         res.status(200).json({
             status: "success",
@@ -44,4 +47,15 @@ exports.deleteBook = asyncErrorHandler(async (req, res, next) => {
         status: "success",
         data: null
     })
-})
+});
+
+exports.updateBook = asyncErrorHandler(async (req, res, next) => {
+    const book = await Book.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
+
+    res.status(200).json({
+        status: "success",
+        data: {
+            book
+        }
+    });
+});
