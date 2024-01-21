@@ -6,12 +6,27 @@ class BookApiFeatures {
         this.queryStr = queryStr;
     }
 
-    filter() {
+    filter () {
         let queryString = JSON.stringify(this.queryStr);
         queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
-        let queryObj = JSON.parse(queryString);
+        const queryObj = JSON.parse(queryString);
 
-        console.log(queryObj);
+        delete queryObj.sort;
+
+        this.query = this.query.find(queryObj);
+
+        return this;
+    }
+
+    sort() {
+        if(this.query.sort) {
+            const sortBy = this.queryStr.sort.split(',').join(' ');
+            console.log(sortBy)
+            this.query = this.query.sort(sortBy);
+        } else {
+            this.query = this.query.sort('-price')
+        }
+        return this;
     }
 }
 

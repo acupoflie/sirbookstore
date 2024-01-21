@@ -40,7 +40,11 @@ const bookSchema = new mongoose.Schema({
         type: Number,
         maxlength: 2000
     },
-    price: String,
+    price: {
+        type: Number,
+        min: 1,
+        max: 10000
+    },
     genres: {
         type: [String],
         // required: [true, 'Genres is required field'],
