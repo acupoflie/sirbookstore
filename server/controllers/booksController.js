@@ -8,7 +8,9 @@ exports.getAllBooks = asyncErrorHandler(async (req, res, next) => {
 
     const features = new BookApiFeatures(Book.find(), req.query)
         .filter()
-        .sort();
+        .sort()
+        .limit()
+        .paginate();
 
     // console.log(features)
 
