@@ -7,6 +7,6 @@ router.route('/signup')
     .post(authController.signup);
 
 router.route('/login')
-    .post(authController.protect, authController.login);
+    .post(authController.login);
 
 module.exports=router;

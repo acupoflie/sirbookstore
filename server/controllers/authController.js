@@ -75,13 +75,15 @@ exports.protect = asyncErrorHandler(async (req, res, next) => {
     }
 
     // 2. validate token
-    const decodedToken = util.promisify(jwt.verify)(token, process.env.SECRET_STR);
+    const decodedToken = await util.promisify(jwt.verify)(token, process.env.SECRET_STR);
     console.log(decodedToken);
 
     // 3. if user exists
+    const user = await User.findById(decodedToken.id)
 
     // 4. if user changed pass after token was made
 
     // 5. allow the route
+    req.user = user;
     next();
 })

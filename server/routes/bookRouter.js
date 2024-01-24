@@ -2,9 +2,10 @@
 const express = require('express');
 const router = express.Router();
 const booksController = require('../controllers/booksController');
+const authController = require('../controllers/authController');
 
 router.route('/books')
-    .get(booksController.getAllBooks)
+    .get(authController.protect, booksController.getAllBooks)
     .post(booksController.addBook);
 
 router.route('/book/:id')

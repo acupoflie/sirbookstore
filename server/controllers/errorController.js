@@ -31,6 +31,9 @@ const ValidationErrorHandler = (err) => {
     return new CustomError(msg, 400);
 }
 
+const handleJWTError = (err) => {
+    return new CustomError('Invalid JSON token. Please log in again.', 401);
+}
 
 module.exports = (error, req, res, next) => {
     error.statusCode = error.statusCode || 500;
@@ -40,6 +43,7 @@ module.exports = (error, req, res, next) => {
         devErrors(res, error);
     } else if (process.env.NODE_ENV === 'production') {
         if(error.name === 'ValidatorError') error = ValidationErrorHandler(error);
+        if(error.name === 'JsonWebTokenError') error = handleJWTError(error);
 
         prodErrors(res, error);
     }
