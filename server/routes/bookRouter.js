@@ -10,7 +10,7 @@ router.route('/books')
 
 router.route('/book/:id')
     .get(booksController.getBook)
-    .delete(booksController.deleteBook)
+    .delete(authController.protect, authController.restrict('admin'), booksController.deleteBook)
     .patch(booksController.updateBook);
 
 module.exports=router;

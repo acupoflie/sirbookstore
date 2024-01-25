@@ -1,7 +1,8 @@
 
 const express = require('express');
 const booksRouter = require('./routes/bookRouter');
-const authRouter = require('./routes/authRouter')
+const authRouter = require('./routes/authRouter');
+const userRouter = require('./routes/userRouter');
 const globalErrorHandler = require('./controllers/errorController');
 const CustomError = require('./utils/CustomError');
 const morgan = require('morgan');
@@ -18,6 +19,7 @@ if(process.env.NODE_ENV === 'development') {
 
 app.use('/', booksRouter);
 app.use('/auth', authRouter);
+app.use('/users', userRouter);
 
 app.all('*', (req, res, next) => {
     const err = new CustomError(`Can't find ${req.originalUrl} on the server`);

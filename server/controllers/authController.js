@@ -4,36 +4,10 @@ const CustomError = require('../utils/CustomError');
 const asyncErrorHandler = require('../utils/asyncErrorHandler');
 const jwt = require('jsonwebtoken');
 const util = require('util');
-
-const signToken = id => {
-    return jwt.sign({ id }, process.env.SECRET_STR, {
-        expiresIn: process.env.LOGIN_EXPIRES
-    })
-}
-
-const createSendResponse = (user, statusCode, res) => {
-    const token = signToken(user._id);
-
-    let options = {
-        expiresIn: process.env.LOGIN_EXPIRES,
-        httpOnly: true
-    }
-
-    if(process.env.NODE_ENV === 'production') {
-        options.secure = true
-    }
-    user.password = undefined;
-
-    res.cookie('jwt', token, options);
-
-    res.status(statusCode).json({
-        status: 'successful',
-        token,
-        data: {
-            user
-        }
-    })
-}
+const createSendResponse = require('../utils/jwtSignHandler');
+const emailjs = require('../utils/email');
+const sendMail = require('../utils/email');
+const crypto = require('crypto');
 
 exports.signup = asyncErrorHandler(async (req, res, next) => {
     const newUser = await User.create(req.body);
@@ -86,4 +60,64 @@ exports.protect = asyncErrorHandler(async (req, res, next) => {
     // 5. allow the route
     req.user = user;
     next();
-})
+});
+
+exports.restrict = function(role) {
+    return (req, res, next) => {
+        if(req.user.role !== role) {
+            const error = new CustomError('You dont have permission to perform this action', 400);
+            next(error);
+        }
+        next();
+    }
+};
+
+exports.forgotPassword = asyncErrorHandler(async (req, res, next) => {
+    // FIND USER
+    const user = await User.findOne({email: req.body.email});
+    if(!user) {
+        next(new CustomError('Could find user with given email', 404));
+    }
+
+    // GENERATE RESET PASS TOKEN
+    const resetToken = user.generateRandomPasswordToken();
+    await user.save({validateBeforeSave: false});
+
+    // SEND TOKEN TO THE USER
+    const resetUrl = `${req.protocol}://${req.get('host')}/users/resetPassword/${resetToken}`;
+    const message = `You have received reset password mail. Please the click below to reset your password \n\n${resetUrl}`;
+
+    try {
+        await sendMail({
+            email: user.email,
+            subject: 'Forgot password mail received.',
+            message
+        });
+
+        res.status(200).json({
+            status: "success",
+            message: "Forgot password message sent to the user email."
+        })
+    } catch (error) {
+        user.passwordResetToken = undefined;
+        user.passwordResetTokenExpires = undefined;
+        await user.save({validateBeforeSave: false});
+
+        next(error);
+    }
+});
+
+
+exports.resetPassword = asyncErrorHandler(async (req, res, next) => {
+    const token = crypto.createHash('sha256').update(req.params.token).digest('hex');
+    const user = await User.findOne({passwordResetToken: token, passwordResetTokenExpires: {$gt: Date.now()}});
+
+    user.password = req.body.password;
+    user.confirmPassword = req.body.confirmPassword;
+    user.passwordResetToken = undefined;
+    user.passwordResetTokenExpires = undefined;
+    user.passwordChangedAt = Date.now();
+    await user.save();
+
+    createSendResponse(user, 200, res);
+});
