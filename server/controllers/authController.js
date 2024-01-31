@@ -56,6 +56,11 @@ exports.protect = asyncErrorHandler(async (req, res, next) => {
     const user = await User.findById(decodedToken.id)
 
     // 4. if user changed pass after token was made
+    const isPasswordChanged = await user.isPasswordChanged(decodedToken.iat);
+    if(isPasswordChanged) {
+        const error = new CustomError('Password has been changed. Please log in again!', 400);
+        next(error);
+    }
 
     // 5. allow the route
     req.user = user;

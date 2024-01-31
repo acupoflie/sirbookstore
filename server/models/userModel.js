@@ -77,6 +77,17 @@ userSchema.methods.generateRandomPasswordToken = function(pass) {
     return resetToken;
 }
 
+userSchema.methods.isPasswordChanged = async function(JWTTimestamp) {
+    if(this.passwordChangedAt) {
+        const pswdChangedStamp = parseInt(this.passwordChangedAt.getTime() / 1000, 10);
+        console.log(pswdChangedStamp, JWTTimestamp);
+
+        return JWTTimestamp < pswdChangedStamp;
+    }
+
+    return false;
+}
+
 const User = mongoose.model('user', userSchema);
 
 module.exports=User;
