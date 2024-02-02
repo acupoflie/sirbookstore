@@ -7,11 +7,24 @@ const globalErrorHandler = require('./controllers/errorController');
 const CustomError = require('./utils/CustomError');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 let app = express();
 
 app.use(express.json());
-app.use(cookieParser())
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(cors({origin: 'http://localhost:3001', credentials: true}));
+
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', 'http://localhost:3001'); // Replace with your client's origin
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     res.header('Access-Control-Allow-Credentials', 'true');
+//     next();
+//   });
 
 if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))

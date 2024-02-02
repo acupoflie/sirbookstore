@@ -38,6 +38,7 @@ exports.protect = asyncErrorHandler(async (req, res, next) => {
     // 1. Reading token
 
     const token = req.cookies.jwt;
+    console.log(token)
 
     // if(testToken && testToken.startsWith('Bearer')) {
     //     token = testToken.split(' ')[1];
