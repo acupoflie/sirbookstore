@@ -97,3 +97,4 @@ Query took 161 milliseconds to fetch all the documents
 Query took 165 milliseconds to fetch all the documents 
 Query took 223 milliseconds to fetch all the documents 
 Query took 322 milliseconds to fetch all the documents 
+Query took 309 milliseconds to fetch all the documents 

@@ -4,11 +4,21 @@
 
 console.log('hello');
 
-const jwtString = 'jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjExMzI4OTYzMzQwYWYyYzI4ZDM1MiIsImlhdCI6MTcwNjgzNDI4NSwiZXhwIjoxNzA2ODM3ODg1fQ.gipl_8Ukg3Wb-7m1_zAoCwUM_vOwJF2yQB7UjQqQuJc';
+const jwtString = 'jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjExMzI4OTYzMzQwYWYyYzI4ZDM1MiIsImlhdCI6MTcwNjkxMjUxNSwiZXhwIjoxNzA2OTE2MTE1fQ.U4ER0cLuVTDwUuDgWz_A58JLLe5qO1IEqiX3E3uUqX0';
 
 // document.cookie= "";
 document.cookie = jwtString
 // document.cookie = document.cookie + '=; expires=' + new Date(0).toUTCString();
+
+//     const cookies = document.cookie.split(";");
+
+//     for (let i = 0; i < cookies.length; i++) {
+//         const cookie = cookies[i];
+//         const eqPos = cookie.indexOf("=");
+//         const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+//         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+//     }
+
 
 console.log(document.cookie)
 
