@@ -1,8 +1,11 @@
 
 // import Cookies from '../../../node_modules/js-cookie';
-// import * as Cookies from 'js-cookie';
+// import * as Cookies from 'js-cookie/dist';
+// import * as Cookies from './jsCookie';
+// const jsCookie = require('./jsCookie');
 
-import Cookies from '../../server/Cookies';
+// import setCookie from './jsCookie'
+
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -16,16 +19,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             email: document.getElementById('email').value,
             password: document.getElementById('password').value
         }
-    })
-    .then(res => res.json())
-    .then(data => {
-        const jwtToken = data.token;
-
-        console.log('JWT token has received', jwtToken);
-
-        Cookies.set('jwtTokens', jwtToken, {expires: 1});
-
-        windows.location.href = '/index.html'
     })
 
 })
