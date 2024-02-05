@@ -10,6 +10,6 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.listen(8765, () => {
+app.listen(7777, () => {
     console.log("front end server has started")
 })

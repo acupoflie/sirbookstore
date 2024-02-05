@@ -19,5 +19,6 @@
     "string_decoder": "^1.3.0",
     "url": "^0.11.3",
     "util": "^0.12.5"
-  }
+  },
+  "proxy": "http://localhost:3355"
 }

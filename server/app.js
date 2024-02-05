@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(cors({origin: 'http://localhost:8765', credentials: true}));
+app.use(cors({origin: 'http://localhost:7777', credentials: true}));
 
 // app.use(function (req, res, next) {
 //     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
