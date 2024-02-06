@@ -1,10 +1,5 @@
 
-// import Cookies from '../../../node_modules/js-cookie';
-// import * as Cookies from 'js-cookie/dist';
-// import * as Cookies from './jsCookie';
-// const jsCookie = require('./jsCookie');
 
-// import setCookie from './jsCookie'
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -28,11 +23,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         const jwtToken = data.token;
         console.log('JWT token has received', jwtToken);
 
-        const expirationDate = new Date();
-        expirationDate.setDate(expirationDate.getDate() + 1000 * 60 * 60 * 24);
+        // const cookieString = `jwt=${encodeURIComponent(jwtToken)};max-age=86400;path=/`;
+        // document.cookie = cookieString;
 
-        const cookieString = `jwt=${encodeURIComponent(jwtToken)};max-age=${expirationDate.toUTCString()};path=/`;
-        document.cookie = cookieString;
+        Cookies.set('jwt', jwtToken, {expires: 1, path: '/'});
 
         // window.location.href = '/index.html'
     })
