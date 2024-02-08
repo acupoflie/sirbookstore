@@ -1,3 +1,4 @@
+/*
 {
   "dependencies": {
     "cookie-parser": "^1.4.6",
@@ -11,6 +12,7 @@
     "crypto-browserify": "^3.12.0",
     "events": "^3.3.0",
     "js-cookie": "^3.0.5",
+    "nodemon": "^3.0.3",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
@@ -22,3 +24,4 @@
   },
   "proxy": "http://localhost:3355"
 }
+*/
