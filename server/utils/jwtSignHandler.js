@@ -9,6 +9,7 @@ const signToken = id => {
 
 const createSendResponse = (user, statusCode, res) => {
     const token = signToken(user._id);
+    console.log(token)
 
     let options = {
         expiresIn: process.env.LOGIN_EXPIRES,
